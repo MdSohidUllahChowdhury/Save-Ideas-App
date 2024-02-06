@@ -10,10 +10,17 @@ class Personality extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 30,
-        backgroundColor: const Color.fromARGB(255, 246, 240, 240),
+        
+        toolbarHeight: 35,
+        backgroundColor: Color.fromARGB(206, 154, 10, 10),
         elevation: 0,
-        title: Text('Personality',style: TextStyle(color: Colors.black),),
+        
+        title: Text('Personality',textAlign: TextAlign.left,
+        style: TextStyle(
+          
+          color: Colors.black,
+          fontSize: 18,),
+          ),
       ),
 
     body: Column(mainAxisAlignment: MainAxisAlignment.start,
@@ -29,7 +36,7 @@ class Personality extends StatelessWidget {
         ),
         SizedBox(height:4),
         Text('Edit Profile',
-        style: TextStyle(color: Colors.orangeAccent),),
+        style: TextStyle(color: Colors.black),),
         
        Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
@@ -96,8 +103,9 @@ class Personality extends StatelessWidget {
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),));
                 },
-                child:Text('Save Change'),
+                child:Text('Save Change',style: TextStyle(color: Colors.black),),
                 style: TextButton.styleFrom(
+                backgroundColor:  Color.fromARGB(206, 154, 10, 10),
                 minimumSize: Size(270, 40),
                  ),
                  )

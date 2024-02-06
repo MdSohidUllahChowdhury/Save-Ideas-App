@@ -100,7 +100,7 @@ body:   Padding(
               child: TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
-                    labelText: "PassWord",
+                    labelText: "Password",
                     
                     border: OutlineInputBorder()
                     ), 
