@@ -81,7 +81,7 @@ class Personality extends StatelessWidget {
               child: TextFormField(
                     obscureText: true,
                     decoration: InputDecoration(
-                    labelText: "PassWord",
+                    labelText: "Password",
                     
                     border: OutlineInputBorder()
                     ), 
