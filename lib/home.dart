@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
-
 import 'package:flutter/material.dart';
 import 'package:to_do/personality.dart';
 import 'package:to_do/setting.dart';
@@ -11,28 +9,30 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      body: Column(mainAxisAlignment: MainAxisAlignment.center,
+       children: [
         Center(
+          // ignore: sized_box_for_whitespace
           child: Container(
             height: 100,
             width: 100,
-            child: CircleAvatar(
+            child: const CircleAvatar(
               backgroundImage: AssetImage('image/shakil.jpg'),
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
-        Text(
+        const Text(
           "Shakil",
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
         ),
-        Text(
+        const Text(
           "Chowdhury",
           style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
         Padding(
@@ -43,12 +43,12 @@ class Home extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Personality(),
+                      builder: (context) => const Personality(),
                     ));
               },
-              leading: Icon(Icons.group),
-              title: Text('Personality'),
-              trailing: Icon(Icons.arrow_forward_ios),
+              leading: const Icon(Icons.group),
+              title: const Text('Personality'),
+              trailing: const Icon(Icons.arrow_forward_ios),
               iconColor: Colors.white,
               tileColor: Colors.orange.shade700,
               shape: RoundedRectangleBorder(
@@ -64,12 +64,12 @@ class Home extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => SubWork(),
+                      builder: (context) => const SubWork(),
                     ));
               },
-              leading: Icon(Icons.work_outlined),
-              title: Text("Work ToDay's"),
-              trailing: Icon(Icons.arrow_forward_ios),
+              leading: const Icon(Icons.work_outlined),
+              title: const Text("Work ToDay's"),
+              trailing: const Icon(Icons.arrow_forward_ios),
               iconColor: Colors.white,
               tileColor: Colors.deepPurple.shade600,
               shape: RoundedRectangleBorder(
@@ -85,12 +85,12 @@ class Home extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Setting(),
+                      builder: (context) => const Setting(),
                     ));
               },
-              leading: Icon(Icons.settings),
-              title: Text('Setting'),
-              trailing: Icon(Icons.arrow_forward_ios),
+              leading: const Icon(Icons.settings),
+              title: const Text('Setting'),
+              trailing: const Icon(Icons.arrow_forward_ios),
               iconColor: Colors.white,
               tileColor: Colors.blueAccent.shade700,
               shape: RoundedRectangleBorder(

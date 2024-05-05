@@ -1,8 +1,7 @@
-// ignore_for_file: prefer_const_constructors, dead_code
-
 import 'package:flutter/material.dart';
 import 'package:to_do/splashscreen.dart';
-//import 'package:to_do/welcome_page.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -13,12 +12,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return ScreenUtilInit(ensureScreenSize: true,
+      designSize:const Size(350, 640),
+      child: 
+      MaterialApp(
       theme: ThemeData(
         fontFamily: 'Kenia'
       ),
-      home: SplashScreen(),
+      home:const SplashScreen(),
       debugShowCheckedModeBanner: false,      
+    )
     );
+    
   }
 }

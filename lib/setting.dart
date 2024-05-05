@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'package:to_do/language.dart';
 import 'package:to_do/login.dart';
@@ -16,7 +14,7 @@ class Setting extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
+            const Row(
               children: [
                 Text(
                   "Settings",
@@ -30,7 +28,7 @@ class Setting extends StatelessWidget {
                 ),
               ],
             ),
-            Row(
+            const Row(
               children: [
                 SizedBox(
                   height: 4,
@@ -46,11 +44,11 @@ class Setting extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Personality(),
+                          builder: (context) => const Personality(),
                         ));
                   },
-                  title: Center(child: Text('Personality')),
-                  trailing: Icon(Icons.arrow_forward_ios),
+                  title: const Center(child: Text('Personality')),
+                  trailing: const Icon(Icons.arrow_forward_ios),
                   iconColor: Colors.white,
                   tileColor: Colors.greenAccent.shade700,
                   shape: RoundedRectangleBorder(
@@ -66,11 +64,11 @@ class Setting extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Language(),
+                          builder: (context) => const Language(),
                         ));
                   },
-                  title: Center(child: Text('Language')),
-                  trailing: Icon(Icons.arrow_forward_ios),
+                  title: const Center(child: Text('Language')),
+                  trailing: const Icon(Icons.arrow_forward_ios),
                   iconColor: Colors.white,
                   tileColor: Colors.blueAccent.shade700,
                   shape: RoundedRectangleBorder(
@@ -86,14 +84,14 @@ class Setting extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Setting(),
+                          builder: (context) => const Setting(),
                         ));
                   },
-                  title: Center(
+                  title: const Center(
                       child: Text(
                     'Terms and Condition',
                   )),
-                  trailing: Icon(Icons.arrow_forward_ios),
+                  trailing: const Icon(Icons.arrow_forward_ios),
                   iconColor: Colors.white,
                   tileColor: Colors.pinkAccent.shade700,
                   shape: RoundedRectangleBorder(
@@ -109,12 +107,11 @@ class Setting extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => LogIn(),
+                          builder: (context) => const LogIn(),
                         ));
                   },
-                  leading: Icon(Icons.login_outlined),
-                  title: Center(child: Text('Log-Out')),
-                  trailing: Icon(Icons.arrow_forward_ios),
+                  title: const Center(child: Text('Log-Out')),
+                  trailing: const Icon(Icons.login_outlined),
                   iconColor: Colors.black45,
                   tileColor: Colors.red.shade400,
                   shape: RoundedRectangleBorder(

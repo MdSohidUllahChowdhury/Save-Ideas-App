@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, sized_box_for_whitespace, sort_child_properties_last
-
 import 'package:flutter/material.dart';
 import 'package:to_do/home.dart';
 
@@ -12,10 +10,10 @@ class Personality extends StatelessWidget {
       appBar: AppBar(
         
         toolbarHeight: 35,
-        backgroundColor: Color.fromARGB(206, 154, 10, 10),
+        backgroundColor: const Color.fromARGB(206, 154, 10, 10),
         elevation: 0,
         
-        title: Text('Personality',textAlign: TextAlign.left,
+        title: const Text('Personality',textAlign: TextAlign.left,
         style: TextStyle(
           
           color: Colors.black,
@@ -24,24 +22,25 @@ class Personality extends StatelessWidget {
       ),
 
     body: Column(mainAxisAlignment: MainAxisAlignment.start,
-      children: [SizedBox(height: 30,),
+      children: [const SizedBox(height: 30,),
         Center(
+          // ignore: sized_box_for_whitespace
           child: Container(
             height: 60,
             width: 60,
-            child: CircleAvatar(
+            child: const CircleAvatar(
               backgroundImage: AssetImage('image/shakil.jpg'),
             ),
           ),
         ),
-        SizedBox(height:4),
-        Text('Edit Profile',
+        const SizedBox(height:4),
+        const Text('Edit Profile',
         style: TextStyle(color: Colors.black),),
         
        Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
               child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                     labelText: "User Name",
                     border: OutlineInputBorder()
                     ), 
@@ -51,7 +50,7 @@ class Personality extends StatelessWidget {
         Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
               child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                     labelText: "Frist Name",
                     border: OutlineInputBorder()
                     ), 
@@ -60,7 +59,7 @@ class Personality extends StatelessWidget {
              Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
               child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                     labelText: "Last Name",
                     border: OutlineInputBorder()
                     ), 
@@ -70,7 +69,7 @@ class Personality extends StatelessWidget {
              Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
               child: TextFormField(
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                     labelText: "E-Mail",
                     border: OutlineInputBorder()
                     ), 
@@ -80,7 +79,7 @@ class Personality extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
               child: TextFormField(
                     obscureText: true,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                     labelText: "Password",
                     
                     border: OutlineInputBorder()
@@ -91,7 +90,7 @@ class Personality extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
               child: TextFormField(
                     
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                     labelText: "Country",
                     
                     border: OutlineInputBorder()
@@ -101,13 +100,14 @@ class Personality extends StatelessWidget {
 
               ElevatedButton(
                 onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Home(),));
                 },
-                child:Text('Save Change',style: TextStyle(color: Colors.black),),
                 style: TextButton.styleFrom(
-                backgroundColor:  Color.fromARGB(206, 154, 10, 10),
-                minimumSize: Size(270, 40),
+                backgroundColor:  const Color.fromARGB(206, 154, 10, 10),
+                minimumSize: const Size(270, 40),
                  ),
+                
+                child:const Text('Save Change',style: TextStyle(color: Colors.black),),
                  )
       ],
     ),

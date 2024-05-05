@@ -12,45 +12,48 @@ class SubWorkTwo extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-        
-         SizedBox(height: 20,),
-          
-          TextFormField(
-                    decoration: InputDecoration(
-                    hoverColor: Colors.black45,              
-                    labelText: "Title",
-                    border: OutlineInputBorder(),
-                    prefixIcon: Icon(Icons.title_sharp),
-                    
-                    ), 
-                    ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                hoverColor: Colors.black45,
+                labelText: "Title",
+                //border: OutlineInputBorder(),
+                prefixIcon: Icon(Icons.title_sharp),
+              ),
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.fromLTRB(2, 20, 2, 200),
+                hoverColor: Colors.black45,
+                labelText: 'Description',
+                hintMaxLines: 50,
 
-        SizedBox(height: 8,),
-        TextFormField(
-                    decoration: InputDecoration(
-                      
-                    contentPadding: EdgeInsets.fromLTRB(2, 20, 2, 450),
-                    hoverColor: Colors.black45,              
-                    labelText: "Your Note",
-                    border: OutlineInputBorder(),
-                    
-                    ), 
-                    ),
-
-                    SizedBox(height: 10,),
-
-        ElevatedButton(onPressed: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),));
-        }, child: Text("Save"))  
-        
-          
-        ],
-          
+                //border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Home(),
+                      ));
+                },
+                child: Text("Save"))
+          ],
         ),
       ),
-      
     );
   }
 }

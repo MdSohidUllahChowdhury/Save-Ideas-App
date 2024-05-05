@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sized_box_for_whitespace, sort_child_properties_last
-
 import 'package:flutter/material.dart';
 import 'package:to_do/login.dart';
 import 'package:to_do/singup.dart';
@@ -13,7 +11,7 @@ class Welcome extends StatelessWidget {
         body: Padding(
       padding: const EdgeInsets.all(6.0),
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-        Text(
+        const Text(
           "Welcome To Our Community",
           style: TextStyle(
             fontFamily: AutofillHints.addressCity,
@@ -23,28 +21,27 @@ class Welcome extends StatelessWidget {
             letterSpacing: 1,
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
-        Row(
+        const Row(
           children: [
             Text("Our community is ready to help you"),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
+        // ignore: sized_box_for_whitespace
         Container(
-
-            //color: const Color.fromARGB(255, 79, 181, 232),
             height: 120,
             width: 120,
             child: Image.asset('image/circle.png')),
-        SizedBox(
+        const SizedBox(
           height: 8,
         ),
-        Text("Get In Through"),
-        SizedBox(
+        const Text("Get In Through"),
+        const SizedBox(
           height: 6,
         ),
         ElevatedButton(
@@ -52,13 +49,15 @@ class Welcome extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => SingUp(),
+                    builder: (context) => const SingUp(),
                   ));
             },
-            child: Text("SingUp"),
             style: TextButton.styleFrom(
-                minimumSize: Size(240, 40), backgroundColor: Colors.orange)),
-        SizedBox(
+                 minimumSize: const Size(240, 40),
+                 backgroundColor: Colors.orange),
+            child: const Text("SingUp")
+                 ),
+        const SizedBox(
           height: 12,
         ),
         ElevatedButton(
@@ -66,13 +65,13 @@ class Welcome extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LogIn(),
+                    builder: (context) => const LogIn(),
                   ));
             },
-            child: Text("LogIn"),
             style: TextButton.styleFrom(
-              minimumSize: Size(240, 40),
-            ))
+              minimumSize: const Size(240, 40),
+            ),
+            child: const Text("LogIn"))
       ]),
     ));
   }
