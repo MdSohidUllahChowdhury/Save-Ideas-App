@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/personality.dart';
-import 'package:to_do/setting.dart';
-import 'package:to_do/sub_work.dart';
+import 'package:to_do/View/Setting Option/personality.dart';
+import 'package:to_do/View/Setting Option/setting.dart';
+import 'package:to_do/View/Save Work/work_add.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
             height: 100,
             width: 100,
             child: const CircleAvatar(
-              backgroundImage: AssetImage('image/shakil.jpg'),
+              backgroundImage: AssetImage('lib/Controller/Assets/image/shakil.jpg'),
             ),
           ),
         ),

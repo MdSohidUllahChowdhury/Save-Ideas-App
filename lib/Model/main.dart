@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/splashscreen.dart';
+import 'package:to_do/View/Intro Screen/splashscreen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 

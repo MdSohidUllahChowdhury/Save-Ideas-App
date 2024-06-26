@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/welcome_page.dart';
+import 'package:to_do/View/Intro Screen/welcome_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -26,7 +26,7 @@ Navigator.pushReplacement(
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor:const Color.fromARGB(174, 178, 220, 181),
-      body: Center(child: Image.asset('image/circle.png')),
+      body: Center(child: Image.asset('lib/Controller/Assets/image/circle.png')),
     );
   }
 }

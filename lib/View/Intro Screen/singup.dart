@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/login.dart';
+import 'package:to_do/View/Intro Screen/login.dart';
 
 class SingUp extends StatelessWidget {
   const SingUp({super.key});
@@ -54,7 +54,7 @@ class SingUp extends StatelessWidget {
             Container(
               height: 70,
               width: 70,
-              child: Image.asset('image/circle.png'),
+              child: Image.asset('lib/Controller/Assets/image/circle.png'),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 8),

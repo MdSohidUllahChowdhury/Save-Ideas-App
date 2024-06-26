@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/home.dart';
+import 'package:to_do/View/home.dart';
 
 class Personality extends StatelessWidget {
   const Personality({super.key});
@@ -29,7 +29,7 @@ class Personality extends StatelessWidget {
             height: 60,
             width: 60,
             child: const CircleAvatar(
-              backgroundImage: AssetImage('image/shakil.jpg'),
+              backgroundImage: AssetImage('lib/Controller/Assets/image/shakil.jpg'),
             ),
           ),
         ),

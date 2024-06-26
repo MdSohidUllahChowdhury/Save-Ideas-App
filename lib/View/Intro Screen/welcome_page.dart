@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/login.dart';
-import 'package:to_do/singup.dart';
+import 'package:to_do/View/Intro Screen/login.dart';
+import 'package:to_do/View/Intro Screen/singup.dart';
 
 class Welcome extends StatelessWidget {
   const Welcome({super.key});
@@ -36,7 +36,7 @@ class Welcome extends StatelessWidget {
         Container(
             height: 120,
             width: 120,
-            child: Image.asset('image/circle.png')),
+            child: Image.asset('lib/Controller/Assets/image/circle.png')),
         const SizedBox(
           height: 8,
         ),

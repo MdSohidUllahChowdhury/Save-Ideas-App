@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/home.dart';
-import 'package:to_do/singup.dart';
+import 'package:to_do/View/home.dart';
+import 'package:to_do/View/Intro Screen/singup.dart';
 
 class LogIn extends StatelessWidget {
   const LogIn({super.key});
@@ -53,7 +53,7 @@ class LogIn extends StatelessWidget {
               Container(
                 height: 70,
                 width: 70,
-                child: Image.asset('image/circle.png'),
+                child: Image.asset('lib/Controller/Assets/image/circle.png'),
               ),
               Padding(
                 padding:

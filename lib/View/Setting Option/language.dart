@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/home.dart';
-import 'package:to_do/setting.dart';
+import 'package:to_do/View/home.dart';
+import 'package:to_do/View/Setting Option/setting.dart';
 
 class Language extends StatelessWidget {
   const Language({super.key});

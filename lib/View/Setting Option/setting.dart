@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/language.dart';
-import 'package:to_do/login.dart';
-import 'package:to_do/personality.dart';
+import 'package:to_do/View/Setting Option/language.dart';
+import 'package:to_do/View/Intro Screen/login.dart';
+import 'package:to_do/View/Setting Option/personality.dart';
 
 class Setting extends StatelessWidget {
   const Setting({super.key});
