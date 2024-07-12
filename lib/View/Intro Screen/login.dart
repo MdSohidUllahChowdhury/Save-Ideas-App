@@ -1,117 +1,94 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:to_do/View/home.dart';
 import 'package:to_do/View/Intro Screen/singup.dart';
+import 'package:to_do/Widgets/form.dart';
 
 class LogIn extends StatelessWidget {
   const LogIn({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+        // ignore: no_leading_underscores_for_local_identifiers
+        final _formkey = GlobalKey<FormState>();
+
     return Scaffold(
-        appBar: AppBar(
-          toolbarHeight: 40,
-          elevation: 0,
-          backgroundColor: const Color.fromARGB(255, 35, 179, 184),
-          title: const Text(
-            "LogIn",
-            textAlign: TextAlign.left,
-            style: TextStyle(
-                color: Colors.black, fontSize: 15, fontWeight: FontWeight.bold),
-          ),
-        ),
         body: Padding(
             padding: const EdgeInsets.all(6.0),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, 
-                children: [
-              const SizedBox(
-                height: 4,
+            child:Column(
+              mainAxisAlignment: MainAxisAlignment.center, 
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+              
+              const Text("Welcome To Our Community",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
               ),
-              const Row(
-                children: [
-                  Text(
-                    "Welcome To Our Community",
-                    style: TextStyle(
-                      fontFamily: AutofillHints.addressCity,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                      wordSpacing: 3,
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(
-                height: 8,
-              ),
-              const Row(
-                children: [
-                  Text("Our community is ready to help you"),
-                ],
-              ),
+
+              const SizedBox(height: 8),
+              const Text("Our community is ready to help you"),
               const SizedBox(height: 16),
-              // ignore: sized_box_for_whitespace
-              Container(
-                height: 70,
-                width: 70,
-                child: Image.asset('lib/Controller/Assets/image/circle.png'),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                      labelText: "E-Mail", border: OutlineInputBorder()),
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 18, vertical: 8),
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                      labelText: "Password", border: OutlineInputBorder()),
-                ),
-              ),
-              const SizedBox(
-                height: 10,
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Home(),
-                        ));
+              Image.asset('lib/Controller/Assets/image/circle.png',
+              fit: BoxFit.fitWidth,
+              height: 185,),
+              const SizedBox(height: 12),
+              
+               Form(
+                key: _formkey,
+                child: Column(
+                  children: [
+                    
+                    const FormSection(
+                      nameit: 'Email',
+                      isMust:true ,
+                      ),
+                    
+                    const SizedBox(height: 10,), 
+                    
+                    const FormSection(
+                      nameit: 'Password',
+                      ispassword: true,
+                      isMust: true,
+                      ),
+
+                    const SizedBox(height: 25),
+                   
+                   ElevatedButton(
+                  onPressed:() {
+                    if(_formkey.currentState!.validate()
+                    ){
+                    Get.offAll(const Home());
+                    }
                   },
                   style: TextButton.styleFrom(
-                    minimumSize: const Size(285, 40),
-                  ),
-                  child: const Text("LogIn")),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text(
-                    "Don't Have An Account?",
-                    style: TextStyle(fontSize: 10),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const SingUp(),
-                          ));
-                    },
-                    child: const Text(
-                      "SingUp",
-                      style: TextStyle(fontSize: 10),
-                    ),
-                  )
-                ],
-              )
+                    minimumSize: const Size(285, 50),
+                   ),
+                  child: const Text("LogIn",
+                   style: TextStyle(color: Colors.black)
+                    )
+                   ),  
+                  ],
+                )
+                ), 
+
+              const SizedBox(height: 12),
+              const Text("Don't Have An Account?",
+                style: TextStyle(fontSize: 10),
+              ),
+
+              TextButton(
+                onPressed:() => Get.to(const SingUp()),
+                child: const Text("SingUp",
+                  style: TextStyle(fontSize: 10),
+                ),
+              ),
+              
             ]
-            )
-            )
-            );
+          )
+         )
+       );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:to_do/View/Intro Screen/splashscreen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(ensureScreenSize: true,
       designSize:const Size(350, 640),
       child: 
-      MaterialApp(
+      GetMaterialApp(
       theme: ThemeData(
         fontFamily: 'Kenia'
       ),

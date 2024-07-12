@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:to_do/View/Intro Screen/welcome_page.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -15,18 +16,20 @@ class _SplashScreenState extends State<SplashScreen> {
     _splash();
     super.initState();
   }
-  _splash()async{
-await  Future.delayed(const Duration(seconds: 2),(){});
-Navigator.pushReplacement(
-  // ignore: use_build_context_synchronously
-  context, MaterialPageRoute(builder: (context) => const Welcome(),));
+  _splash() async {
+     await  Future.delayed(
+      const Duration(seconds: 2),(){}
+      );
+      Get.offAll(const Welcome());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:const Color.fromARGB(174, 178, 220, 181),
-      body: Center(child: Image.asset('lib/Controller/Assets/image/circle.png')),
+      backgroundColor:const Color.fromARGB(255, 165, 35, 12),
+      body: Center(
+        child: Image.asset('lib/Controller/Assets/image/circle.png')
+        ),
     );
   }
 }
