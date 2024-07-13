@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenUtilInit(ensureScreenSize: true,
-      designSize:const Size(350, 640),
-      child: 
-      GetMaterialApp(
+    return ScreenUtilInit(
+      ensureScreenSize: true,
+      designSize:const Size(360, 680),
+      child: GetMaterialApp(
       theme: ThemeData(
         fontFamily: 'Kenia'
-      ),
+        ),
       home:const SplashScreen(),
       debugShowCheckedModeBanner: false,      
     )

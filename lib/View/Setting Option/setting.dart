@@ -11,25 +11,18 @@ class Setting extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      appBar: AppBar(
-        backgroundColor:Colors.blueAccent.shade700,
-        toolbarHeight:50,
-        elevation: 0,
-        leading:IconButton(onPressed:() => Get.back(), 
-        icon:const Icon(Icons.arrow_back_ios_new_rounded,size:15)),
-        title: const Text('Settings',
-        textAlign: TextAlign.left,
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 18),
-          ),
-      ),
 
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+           IconButton(
+          onPressed:() =>Get.back(),
+          icon:const Icon(Icons.swipe_up_alt_rounded,size: 20,
+          )
+          ),
+         const SizedBox(height: 10),
+         
          const Text("Settings",
             style: TextStyle(
                 fontSize: 26,

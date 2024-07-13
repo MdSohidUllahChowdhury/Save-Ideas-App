@@ -4,8 +4,9 @@ import 'package:to_do/View/Save Work/notescreen.dart';
 
 
 class CreateNote extends StatelessWidget {
+  final bool ismust;
   const CreateNote({super.key, required this.ismust});
-final bool ismust;
+
   @override
   Widget build(BuildContext context) {
 
@@ -16,53 +17,55 @@ final bool ismust;
       backgroundColor: Colors.white,
       body:Column(
         children: [
+         
          IconButton(
           onPressed:() =>Get.back(),
           icon:const Icon(Icons.swipe_up_alt_rounded,size: 20,
           )
           ),
+
           Form(
-            key: formkey,
-            child:Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                children: [
-                  TextFormField(
-             validator: ismust == true ? (String? value) 
-        {
-          if(value == null || value.isEmpty){
-            return 'Fill Requier Box';
-          }else{
-            return null;
-          }
-        }:
-        null,
-              textAlign: TextAlign.start,
-              minLines: 2,
-              maxLines: 2,
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: const Color.fromARGB(255, 110, 105, 105),
-                hintText: 'Add a title',
-                border: OutlineInputBorder(
+           key: formkey,
+           child:Padding(
+            padding: const EdgeInsets.all(10),
+             child: Column(
+              children: [
+               TextFormField(
+                validator: ismust == true ? (String? value)
+                {
+                  if(value == null || value.isEmpty)
+                  {
+                    return 'Please add title';
+                  }
+                  else {
+                    return null;
+                  }
+                } :
+                 null,
+
+                textAlign: TextAlign.start,
+                minLines: 2,
+                maxLines: 2,
+                decoration: InputDecoration(
+                 filled: true,
+                 fillColor: const Color.fromARGB(255, 110, 105, 105),
+                 hintText: 'Add a title',
+                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                   borderSide: BorderSide.none
                 ),
               ),
-                        ),
-              const SizedBox(height: 30),
+            ),
+          
+          const SizedBox(height: 30),
            
            
-       TextFormField(
-        validator: ismust == true ? (String? value) 
-        {
-          if(value == null || value.isEmpty){
-            return 'Fill Requier Box';
-          }else{
-            return null;
-          }
-        }:
-        null,
+          TextFormField(
+              validator: ismust == true ? (String? detail) {
+                if(detail == null || detail.isEmpty){
+                  return 'Please add note details';
+                }return null;
+              } : null,
               textAlign: TextAlign.start,
               maxLines:15,
               minLines:15,
@@ -75,11 +78,12 @@ final bool ismust;
                   borderSide: BorderSide.none
                 ),
               ),
-                        ),
-             const SizedBox(height: 30),
-             ElevatedButton(
+         ),
+          const SizedBox(height: 30),
+          
+          ElevatedButton(
                     onPressed:() {
-                     if (formkey.currentState!.validate()){
+                     if(formkey.currentState!.validate()){
                       Get.offAll(const NotePage());
                      }
                     },

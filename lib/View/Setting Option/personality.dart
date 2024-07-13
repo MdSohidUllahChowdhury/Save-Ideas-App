@@ -13,23 +13,16 @@ class Personality extends StatelessWidget {
 
     return Scaffold(
       
-      appBar: AppBar(
-        backgroundColor:Colors.orange.shade700,
-        toolbarHeight:50,
-        elevation: 0,
-        leading:IconButton(onPressed:() => Get.back(), 
-        icon:const Icon(Icons.arrow_back_ios_new_rounded,size:15)),
-        title: const Text('Personality',
-        textAlign: TextAlign.left,
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 18),
-          ),
-      ),
-
     body: Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        
+         IconButton(
+          onPressed:() =>Get.back(),
+          icon:const Icon(Icons.swipe_up_alt_rounded,size: 20,
+          )
+          ),
+        
         const SizedBox(height:15),
         const CircleAvatar(
           radius:35,
