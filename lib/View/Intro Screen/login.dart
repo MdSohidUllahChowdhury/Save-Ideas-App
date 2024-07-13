@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:to_do/View/home.dart';
+import 'package:to_do/Model/home.dart';
 import 'package:to_do/View/Intro Screen/singup.dart';
 import 'package:to_do/Widgets/form.dart';
 

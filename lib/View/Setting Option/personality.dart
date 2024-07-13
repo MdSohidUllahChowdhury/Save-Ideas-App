@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:to_do/View/home.dart';
+import 'package:to_do/Model/home.dart';
 import 'package:to_do/Widgets/form.dart';
 
 class Personality extends StatelessWidget {
@@ -15,8 +15,10 @@ class Personality extends StatelessWidget {
       
       appBar: AppBar(
         backgroundColor:Colors.orange.shade700,
-        toolbarHeight: 35,
-        elevation: 0, 
+        toolbarHeight:50,
+        elevation: 0,
+        leading:IconButton(onPressed:() => Get.back(), 
+        icon:const Icon(Icons.arrow_back_ios_new_rounded,size:15)),
         title: const Text('Personality',
         textAlign: TextAlign.left,
         style: TextStyle(

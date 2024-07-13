@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:to_do/View/Setting Option/personality.dart';
 import 'package:to_do/View/Setting Option/setting.dart';
-import 'package:to_do/View/Save Work/work_add.dart';
+import 'package:to_do/View/Save Work/notescreen.dart';
 import 'package:to_do/Widgets/listcard.dart';
 
 class Home extends StatelessWidget {
@@ -35,7 +35,7 @@ class Home extends StatelessWidget {
         ListCard(
           addIconOne:const Icon(Icons.document_scanner),
           titlename:const Text('Your Note'), 
-          ontap:() => Get.to(const SubWork()), 
+          ontap:() => Get.to(const NotePage()), 
           colors:Colors.deepPurple.shade600,
           ),
         ListCard(

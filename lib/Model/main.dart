@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:to_do/View/Intro Screen/splashscreen.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -24,6 +23,5 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,      
     )
     );
-    
   }
 }

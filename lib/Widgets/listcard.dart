@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class ListCard extends StatelessWidget {
-  final Icon addIconOne;
+  final Icon? addIconOne;
   final Widget titlename;
-  final void Function() ontap;
+  final void Function()? ontap;
   final Color colors;
   
   const ListCard({super.key,
   
-   required this.addIconOne,
+    this.addIconOne,
    required this.titlename, 
-   required this.ontap, 
+    this.ontap, 
    required this.colors});
 
   @override

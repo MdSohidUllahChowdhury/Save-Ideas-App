@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/View/home.dart';
-import 'package:to_do/View/Setting Option/setting.dart';
+import 'package:get/get.dart';
+import 'package:to_do/Model/home.dart';
+import 'package:to_do/Widgets/listcard.dart';
 
 class Language extends StatelessWidget {
   const Language({super.key});
@@ -8,74 +9,58 @@ class Language extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-            padding: const EdgeInsets.all(10),
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              const Row(
-                children: [
-                  Text(
-                    "Language",
-                    style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: AutofillHints.countryName),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                ],
-              ),
-              const Row(
-                children: [
-                  Text("Your setting so that we are comfortable"),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(6),
-                child: Card(
-                  child: ListTile(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Home(),
-                          ));
-                    },
-                    title: const Center(child: Text('বাংলা')),
-                    trailing: const Icon(Icons.arrow_forward_ios),
-                    iconColor: Colors.white,
-                    tileColor: Colors.greenAccent,
-                  ),
+
+
+ appBar: AppBar(
+        backgroundColor:Colors.blueAccent.shade700,
+        toolbarHeight:50,
+        elevation: 0,
+        leading:IconButton(onPressed:() => Get.back(), 
+        icon:const Icon(Icons.arrow_back_ios_new_rounded,size:15)),
+        title: const Text('Language',
+        textAlign: TextAlign.left,
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 18),
+          ),
+      ),
+
+      body:Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+         const Text("Language",
+            style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.bold
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(6),
-                child: Card(
-                  child: ListTile(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const Home(),
-                          ));
-                    },
-                    title: const Center(child: Text('ENGLISH')),
-                    trailing: const Icon(Icons.arrow_forward_ios),
-                    iconColor: Colors.white,
-                    tileColor: Colors.blueAccent,
-                  ),
-                ),
-              ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const Setting(),
-                        ));
-                  },
-                  child: const Text("Save"))
-            ])));
+          ),
+         const SizedBox(height:8),
+         const Text("Your setting option so change your way you want"),
+         const SizedBox(height:40),
+         const ListCard(
+          titlename: Text('বাংলা',textAlign: TextAlign.center,),  
+          colors:Colors.greenAccent
+         ),
+         const ListCard(  
+          titlename:Text('ENGLISH',textAlign: TextAlign.center,),  
+          colors:Colors.blueGrey,
+         ),
+         const SizedBox(height:30),
+          ElevatedButton(
+          onPressed:() => Get.offAll(const Home()),
+          style: TextButton.styleFrom(
+            minimumSize: const Size(300, 50),
+            elevation: 10,
+            backgroundColor: Colors.blue.shade700,
+            ),
+          child: const Text('Save Change',
+            style: TextStyle(color: Colors.black)
+            )
+            ),
+        
+        ]
+     )
+   );
   }
 }

@@ -30,12 +30,12 @@ class Welcome extends StatelessWidget {
         
         const SizedBox(height: 15),
         
-        Image.asset('lib/Controller/Assets/image/circle.png'),
+        Image.asset('lib/Controller/Assets/image/circle.png',height: 230,),
         
-        const SizedBox(height: 8),
+        const SizedBox(height:10),
 
         const Text("Get In Through"),
-        const SizedBox(height: 6),
+        const SizedBox(height:20),
         
         ElevatedButton(
 
@@ -50,7 +50,7 @@ class Welcome extends StatelessWidget {
               ) 
              )
             ),
-        const SizedBox(height: 12),
+        const SizedBox(height:20),
         
         ElevatedButton(
             onPressed:() => Get.offAll(const LogIn()),
