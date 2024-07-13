@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:to_do/View/Setting Option/personality.dart';
 import 'package:to_do/View/Setting Option/setting.dart';
 import 'package:to_do/View/Save Work/work_add.dart';
+import 'package:to_do/Widgets/listcard.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -9,96 +11,42 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(mainAxisAlignment: MainAxisAlignment.center,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
        children: [
-        Center(
-          // ignore: sized_box_for_whitespace
-          child: Container(
-            height: 100,
-            width: 100,
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('lib/Controller/Assets/image/shakil.jpg'),
-            ),
+        const CircleAvatar(
+           radius: 60,
+           backgroundImage: AssetImage('lib/Controller/Assets/image/shakil.jpg'),
+         ),
+        const SizedBox(height:8),
+        
+        const Text("Shakil\nChowdhury",
+          textAlign:TextAlign.center,
+          style: TextStyle(fontWeight: FontWeight.w800,fontSize: 20),
           ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        const Text(
-          "Shakil",
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
-        ),
-        const Text(
-          "Chowdhury",
-          style: TextStyle(fontWeight: FontWeight.w800, fontSize: 20),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Padding(
-          padding: const EdgeInsets.all(6),
-          child: Card(
-            child: ListTile(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Personality(),
-                    ));
-              },
-              leading: const Icon(Icons.group),
-              title: const Text('Personality'),
-              trailing: const Icon(Icons.arrow_forward_ios),
-              iconColor: Colors.white,
-              tileColor: Colors.orange.shade700,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-            ),
+        const SizedBox(height: 8),
+
+        ListCard(
+          addIconOne:const Icon(Icons.person_3_outlined),
+          titlename:const Text('Profile'), 
+          ontap:() => Get.to(const Personality()), 
+          colors:Colors.orange.shade700
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(6),
-          child: Card(
-            child: ListTile(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SubWork(),
-                    ));
-              },
-              leading: const Icon(Icons.work_outlined),
-              title: const Text("Work ToDay's"),
-              trailing: const Icon(Icons.arrow_forward_ios),
-              iconColor: Colors.white,
-              tileColor: Colors.deepPurple.shade600,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-            ),
+        ListCard(
+          addIconOne:const Icon(Icons.document_scanner),
+          titlename:const Text('Your Note'), 
+          ontap:() => Get.to(const SubWork()), 
+          colors:Colors.deepPurple.shade600,
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(6),
-          child: Card(
-            child: ListTile(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Setting(),
-                    ));
-              },
-              leading: const Icon(Icons.settings),
-              title: const Text('Setting'),
-              trailing: const Icon(Icons.arrow_forward_ios),
-              iconColor: Colors.white,
-              tileColor: Colors.blueAccent.shade700,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15)),
-            ),
+        ListCard(
+          addIconOne:const Icon(Icons.settings_applications_sharp),
+          titlename:const Text('Setting'), 
+          ontap:() => Get.to(const Setting()), 
+          colors:Colors.blueAccent.shade700,
           ),
-        ),
-      ]),
+
+       ]
+      ),
     );
   }
 }

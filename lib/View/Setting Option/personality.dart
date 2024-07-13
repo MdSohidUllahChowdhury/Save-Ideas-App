@@ -1,114 +1,103 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:to_do/View/home.dart';
+import 'package:to_do/Widgets/form.dart';
 
 class Personality extends StatelessWidget {
   const Personality({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+    final formkey = GlobalKey<FormState>();
+
     return Scaffold(
+      
       appBar: AppBar(
-        
+        backgroundColor:Colors.orange.shade700,
         toolbarHeight: 35,
-        backgroundColor: const Color.fromARGB(206, 154, 10, 10),
-        elevation: 0,
-        
-        title: const Text('Personality',textAlign: TextAlign.left,
+        elevation: 0, 
+        title: const Text('Personality',
+        textAlign: TextAlign.left,
         style: TextStyle(
-          
           color: Colors.black,
-          fontSize: 18,),
+          fontSize: 18),
           ),
       ),
 
-    body: Column(mainAxisAlignment: MainAxisAlignment.start,
-      children: [const SizedBox(height: 30,),
-        Center(
-          // ignore: sized_box_for_whitespace
-          child: Container(
-            height: 60,
-            width: 60,
-            child: const CircleAvatar(
-              backgroundImage: AssetImage('lib/Controller/Assets/image/shakil.jpg'),
-            ),
-          ),
+    body: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        const SizedBox(height:15),
+        const CircleAvatar(
+          radius:35,
+          backgroundImage: AssetImage('lib/Controller/Assets/image/shakil.jpg'),
         ),
         const SizedBox(height:4),
-        const Text('Edit Profile',
-        style: TextStyle(color: Colors.black),),
+        const Text('Edit Profile',style: TextStyle(color: Colors.black),),
         
-       Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
-              child: TextFormField(
-                    decoration: const InputDecoration(
-                    labelText: "User Name",
-                    border: OutlineInputBorder()
-                    ), 
-                    ),
-                    ), 
-        
-        Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
-              child: TextFormField(
-                    decoration: const InputDecoration(
-                    labelText: "Frist Name",
-                    border: OutlineInputBorder()
-                    ), 
-                    ),
-                    ),
-             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
-              child: TextFormField(
-                    decoration: const InputDecoration(
-                    labelText: "Last Name",
-                    border: OutlineInputBorder()
-                    ), 
-                    ),
-                    ),        
-             
-             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
-              child: TextFormField(
-                    decoration: const InputDecoration(
-                    labelText: "E-Mail",
-                    border: OutlineInputBorder()
-                    ), 
-                    ),
-                    ),
-             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
-              child: TextFormField(
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                    labelText: "Password",
+                      Form(
+                key: formkey,
+                child: Column(
+                  children: [
                     
-                    border: OutlineInputBorder()
-                    ), 
-                    ),
-                    ),
-             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 8),
-              child: TextFormField(
+                    const FormSection(
+                      nameit: 'Frist Name',
+                      isMust:true,
+                      ),
                     
-                    decoration: const InputDecoration(
-                    labelText: "Country",
+                    const SizedBox(height:4), 
+                   
+                    const FormSection(
+                      nameit: 'Last Name',
+                      isMust:true ,
+                      ),
                     
-                    border: OutlineInputBorder()
-                    ), 
-                    ),
-                    ),
+                    const SizedBox(height:4), 
+                    
+                    const FormSection(
+                      nameit: 'Email',
+                      ),
+                    
+                    const SizedBox(height:4), 
+                    
+                    const FormSection(
+                      nameit: 'Password',
+                      ispassword: true,
+                     
+                      ),
+                    const SizedBox(height:4), 
+                    
+                    const FormSection(
+                      nameit: 'Country',
+                      ),
 
-              ElevatedButton(
-                onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const Home(),));
-                },
-                style: TextButton.styleFrom(
-                backgroundColor:  const Color.fromARGB(206, 154, 10, 10),
-                minimumSize: const Size(270, 40),
-                 ),
-                
-                child:const Text('Save Change',style: TextStyle(color: Colors.black),),
-                 )
+                    const SizedBox(height:20),
+                   
+                   ElevatedButton(
+                  onPressed:() {
+                   
+                    if(formkey.currentState!.validate()
+                    )
+                    {
+                    Get.to(const Home());
+                    }
+
+                  },
+                  style: TextButton.styleFrom(
+                    minimumSize: const Size(285, 50),
+                    elevation: 10,
+                    backgroundColor: Colors.orange.shade700,
+                   ),
+                  child: const Text('Save Change',
+                   style: TextStyle(color: Colors.black)
+                    )
+                   ),
+                     
+                  ],
+                )
+              ), 
+       
       ],
     ),
 
