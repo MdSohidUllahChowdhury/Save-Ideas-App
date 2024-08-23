@@ -14,14 +14,17 @@ class CreateNote extends StatelessWidget {
     
 
     return Scaffold(
+      
       backgroundColor: Colors.white,
+      
       body:Column(
         children: [
          
          IconButton(
           onPressed:() =>Get.back(),
-          icon:const Icon(Icons.swipe_up_alt_rounded,size: 20,
-          )
+          icon:const Icon(Icons.swipe_up_alt_rounded,
+          size: 20,
+           )
           ),
 
           Form(
@@ -48,7 +51,7 @@ class CreateNote extends StatelessWidget {
                 maxLines: 2,
                 decoration: InputDecoration(
                  filled: true,
-                 fillColor: const Color.fromARGB(255, 110, 105, 105),
+                 fillColor: Colors.grey.shade400,
                  hintText: 'Add a title',
                  border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -57,7 +60,7 @@ class CreateNote extends StatelessWidget {
               ),
             ),
           
-          const SizedBox(height: 30),
+          const SizedBox(height:25),
            
            
           TextFormField(
@@ -71,7 +74,7 @@ class CreateNote extends StatelessWidget {
               minLines:15,
               decoration: InputDecoration(
                 filled: true,
-                fillColor: const Color.fromARGB(255, 110, 105, 105),
+                fillColor: Colors.grey.shade400,
                 hintText: 'Create here your note details',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -79,7 +82,8 @@ class CreateNote extends StatelessWidget {
                 ),
               ),
          ),
-          const SizedBox(height: 30),
+        
+        const SizedBox(height: 30),
           
           ElevatedButton(
                     onPressed:() {
@@ -90,17 +94,20 @@ class CreateNote extends StatelessWidget {
                     style: TextButton.styleFrom(
                       minimumSize: const Size(320, 50),
                       elevation: 10,
-                      backgroundColor: Colors.orange.shade700,
+                      backgroundColor: Colors.deepPurpleAccent.shade400,
                      ),
                     child: const Text('Save Change',
-                     style: TextStyle(color: Colors.black)
+                     style: TextStyle(
+                      letterSpacing: 1.2,
+                      fontSize: 16,
+                      color: Colors.white
+                       )
                       )
                     ),
                 ],
               ),
-            )
+             )
             ),
-
         ],
       ) ,
     );

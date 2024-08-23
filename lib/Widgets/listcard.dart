@@ -8,10 +8,10 @@ class ListCard extends StatelessWidget {
   
   const ListCard({super.key,
   
-    this.addIconOne,
-   required this.titlename, 
-    this.ontap, 
-   required this.colors});
+  this.addIconOne,
+  required this.titlename, 
+  this.ontap, 
+  required this.colors});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class ListCard extends StatelessWidget {
        shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.circular(15)
            ),
-     ),
+      ),
     );
   }
 }

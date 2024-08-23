@@ -19,19 +19,28 @@ class Personality extends StatelessWidget {
         
          IconButton(
           onPressed:() =>Get.back(),
-          icon:const Icon(Icons.swipe_up_alt_rounded,size: 20,
-          )
+          icon:const Icon(Icons.swipe_up_alt_rounded,
+          size: 20,
+           )
           ),
         
         const SizedBox(height:15),
+        
         const CircleAvatar(
-          radius:35,
+          radius:40,
           backgroundImage: AssetImage('lib/Controller/Assets/image/shakil.jpg'),
         ),
+
         const SizedBox(height:4),
-        const Text('Edit Profile',style: TextStyle(color: Colors.black),),
+
+        const Text('Edit Profile',
+         style: TextStyle(
+          color: Colors.black,
+          letterSpacing: 1.2
+           ),
+          ),
         
-                      Form(
+              Form(
                 key: formkey,
                 child: Column(
                   children: [
@@ -80,22 +89,24 @@ class Personality extends StatelessWidget {
 
                   },
                   style: TextButton.styleFrom(
-                    minimumSize: const Size(285, 50),
+                    minimumSize: const Size(260, 50),
                     elevation: 10,
-                    backgroundColor: Colors.orange.shade700,
+                    backgroundColor: Colors.orangeAccent.shade400,
                    ),
                   child: const Text('Save Change',
-                   style: TextStyle(color: Colors.black)
+                   style: TextStyle(
+                    fontSize: 16,
+                    letterSpacing: 1.2,
+                    color: Colors.black
+                     )
                     )
                    ),
                      
                   ],
                 )
               ), 
-       
       ],
     ),
-
-);
-}
+  );
+ }
 }

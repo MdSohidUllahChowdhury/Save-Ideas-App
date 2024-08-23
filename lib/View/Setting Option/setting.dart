@@ -16,45 +16,57 @@ class Setting extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-           IconButton(
+         IconButton(
           onPressed:() =>Get.back(),
-          icon:const Icon(Icons.swipe_up_alt_rounded,size: 20,
-          )
+          icon:const Icon(Icons.swipe_up_alt_rounded,
+          size: 20,
+           )
           ),
+
          const SizedBox(height: 10),
          
          const Text("Settings",
             style: TextStyle(
-                fontSize: 26,
+                fontSize:30,
                 fontWeight: FontWeight.bold
                 ),
           ),
+
          const SizedBox(height:8),
-         const Text("Your setting option so change your way you want"),
+
+         const Text("Your setting option so change your way you want",
+          style: TextStyle(
+                fontSize:13,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 1.2
+               ),
+              ),
+         
          const SizedBox(height:40),
+         
          ListCard(
           addIconOne:const Icon(Icons.person),
           titlename:const Text('Profile'), 
           ontap:() => Get.to(const Personality()), 
-          colors:Colors.orange.shade700
+          colors:Colors.orange.shade400
          ),
          ListCard(  
           addIconOne:const Icon(Icons.language),
           titlename:const Text('Language'), 
           ontap:() => Get.to(const Language()), 
-          colors:Colors.greenAccent.shade700,
+          colors:Colors.greenAccent.shade400,
          ),
          ListCard(
           addIconOne:const Icon(Icons.note_alt),
           titlename:const Text('Terms and Condition'), 
           ontap:() => Get.to(const Setting()), 
-          colors:Colors.pinkAccent.shade700,
+          colors:Colors.pinkAccent.shade400,
         ),
          ListCard(
           addIconOne:const Icon(Icons.login_outlined),
           titlename:const Text('Log Out'), 
           ontap:() => Get.to(const LogIn()), 
-          colors:Colors.red,
+          colors:Colors.redAccent.shade400,
         ),
           
         ],
