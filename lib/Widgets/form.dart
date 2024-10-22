@@ -4,7 +4,9 @@ class FormSection extends StatelessWidget {
   final String nameit;
   final bool? ispassword;
   final bool? isMust;
+  
   const FormSection({super.key, 
+  
   required this.nameit, 
    this.ispassword, 
    this.isMust});
@@ -18,6 +20,7 @@ class FormSection extends StatelessWidget {
         ),
       
       child: TextFormField(
+        
         validator: isMust == true ? (String? value) 
         {
           if(value == null || value.isEmpty){
@@ -33,7 +36,6 @@ class FormSection extends StatelessWidget {
             filled: true,
             fillColor: const Color.fromARGB(192, 235, 224, 224),
             labelText:nameit,
-            
             border: OutlineInputBorder(
               borderRadius:BorderRadius.circular(16),
               borderSide: BorderSide.none,

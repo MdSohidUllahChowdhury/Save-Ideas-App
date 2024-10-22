@@ -79,14 +79,10 @@ class Personality extends StatelessWidget {
                     const SizedBox(height:20),
                    
                    ElevatedButton(
-                  onPressed:() {
-                   
-                    if(formkey.currentState!.validate()
-                    )
-                    {
+                  onPressed:() {                 
+                    if(formkey.currentState!.validate()){
                     Get.to(const Home());
                     }
-
                   },
                   style: TextButton.styleFrom(
                     minimumSize: const Size(260, 50),

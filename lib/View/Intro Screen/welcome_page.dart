@@ -11,6 +11,7 @@ class Welcome extends StatelessWidget {
     return Scaffold(
         body: Column(
          mainAxisAlignment: MainAxisAlignment.center,
+         crossAxisAlignment: CrossAxisAlignment.center,
          children: [
          
          const Text("Welcome To Our Community",
