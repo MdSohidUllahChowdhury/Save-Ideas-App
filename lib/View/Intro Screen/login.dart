@@ -63,7 +63,7 @@ class LogIn extends StatelessWidget {
                  onPressed:() {
                 if(_formkey.currentState!.validate())
                 {
-                Get.offAll(const Home());
+                Get.offAll(()=>const Home());
                 }
                },
               style: TextButton.styleFrom(
@@ -89,7 +89,7 @@ class LogIn extends StatelessWidget {
           ),
         
           TextButton(
-            onPressed:() => Get.to(const SingUp()),
+            onPressed:() => Get.to(()=>const SingUp()),
             child: const Text("SingUp",
               style: TextStyle(fontSize: 10),
             ),

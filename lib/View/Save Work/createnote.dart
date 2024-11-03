@@ -88,7 +88,7 @@ class CreateNote extends StatelessWidget {
           ElevatedButton(
                     onPressed:() {
                      if(formkey.currentState!.validate()){
-                      Get.offAll(const NotePage());
+                      Get.offAll(()=>const NotePage());
                      }
                     },
                     style: TextButton.styleFrom(

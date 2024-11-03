@@ -20,7 +20,7 @@ class NotePage extends StatelessWidget {
           children: [
         
            IconButton(
-            onPressed:() =>Get.to(const Home()),
+            onPressed:() =>Get.to(()=>const Home()),
             icon:const Icon(Icons.swipe_up_alt_rounded,
              size: 20,
              )
@@ -58,7 +58,7 @@ class NotePage extends StatelessWidget {
               elevation: 40,
               hoverColor: Colors.deepPurpleAccent.shade400,
               
-              onPressed:() => Get.to(const CreateNote(ismust: true,)),
+              onPressed:() => Get.to(()=>const CreateNote(ismust: true,)),
               
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,

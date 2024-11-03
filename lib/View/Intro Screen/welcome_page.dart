@@ -14,7 +14,7 @@ class Welcome extends StatelessWidget {
          crossAxisAlignment: CrossAxisAlignment.center,
          children: [
          
-         const Text("Welcome To Our Community",
+         const Text("  Welcome To Our Community",
          textAlign: TextAlign.center,
          style: TextStyle(
            fontWeight: FontWeight.bold,
@@ -41,7 +41,7 @@ class Welcome extends StatelessWidget {
                 
          ElevatedButton(
         
-           onPressed: () =>Get.offAll(const SingUp()),
+           onPressed: () =>Get.offAll(()=>const SingUp()),
               style: TextButton.styleFrom(
                 minimumSize: const Size(260, 50),
                 backgroundColor: Colors.orangeAccent.shade400
@@ -58,7 +58,7 @@ class Welcome extends StatelessWidget {
         const SizedBox(height:20),
                 
         ElevatedButton(
-           onPressed:() => Get.offAll(const LogIn()),
+           onPressed:() => Get.offAll(()=>const LogIn()),
            style: TextButton.styleFrom(
              minimumSize: const Size(260, 50),
              backgroundColor: Colors.blueAccent.shade400

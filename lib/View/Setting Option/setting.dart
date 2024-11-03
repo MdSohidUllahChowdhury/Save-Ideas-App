@@ -47,25 +47,25 @@ class Setting extends StatelessWidget {
          ListCard(
           addIconOne:const Icon(Icons.person),
           titlename:const Text('Profile'), 
-          ontap:() => Get.to(const Personality()), 
+          ontap:() => Get.to(()=>const Personality()), 
           colors:Colors.orange.shade400
          ),
          ListCard(  
           addIconOne:const Icon(Icons.language),
           titlename:const Text('Language'), 
-          ontap:() => Get.to(const Language()), 
+          ontap:() => Get.to(()=>const Language()), 
           colors:Colors.greenAccent.shade400,
          ),
          ListCard(
           addIconOne:const Icon(Icons.note_alt),
           titlename:const Text('Terms and Condition'), 
-          ontap:() => Get.to(const Setting()), 
+          ontap:() => Get.to(()=>const Setting()), 
           colors:Colors.pinkAccent.shade400,
         ),
          ListCard(
           addIconOne:const Icon(Icons.login_outlined),
           titlename:const Text('Log Out'), 
-          ontap:() => Get.to(const LogIn()), 
+          ontap:() => Get.to(()=>const LogIn()), 
           colors:Colors.redAccent.shade400,
         ),
           

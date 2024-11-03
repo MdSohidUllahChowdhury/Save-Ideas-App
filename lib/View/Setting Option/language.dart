@@ -55,7 +55,7 @@ class Language extends StatelessWidget {
          const SizedBox(height:30),
 
           ElevatedButton(
-          onPressed:() => Get.offAll(const Home()),
+          onPressed:() => Get.offAll(()=>const Home()),
           style: TextButton.styleFrom(
             minimumSize: const Size(260, 50),
             elevation: 10,

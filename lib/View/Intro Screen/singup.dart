@@ -78,7 +78,7 @@ class SingUp extends StatelessWidget {
                  
                    if(_formkey.currentState!.validate())
                     {
-                      Get.offAll(const LogIn());
+                      Get.offAll(()=>const LogIn());
                     }
                   },
 
@@ -107,7 +107,7 @@ class SingUp extends StatelessWidget {
                 style: TextStyle(fontSize: 10),
               ),
           TextButton(
-            onPressed: () => Get.to(const LogIn()),
+            onPressed: () => Get.to(()=>const LogIn()),
             child: const Text("LogIn",
               style: TextStyle(fontSize: 10),
              ),

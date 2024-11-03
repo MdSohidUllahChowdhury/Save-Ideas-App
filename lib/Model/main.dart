@@ -6,9 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 void main() {
   runApp((ScreenUtilInit(
       ensureScreenSize: true,
-      designSize: const Size(360, 680),
+      designSize: const Size(375, 725),
       child: GetMaterialApp(
-        theme: ThemeData(fontFamily: 'Kenia02'),
+        theme: ThemeData(fontFamily: 'Kenia02', useMaterial3: true),
         home: const SplashScreen(),
         debugShowCheckedModeBanner: false,
       ))));
